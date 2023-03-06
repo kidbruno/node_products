@@ -1,0 +1,35 @@
+<div class="products">
+   
+    <div class="header-list-page">
+         <h1 class="title">Produtos</h1>
+        <a href="/product/adicionar"><button class="btn-action">Adicionar Produto</button></a>
+    </div>
+
+    <table class="data-grid">
+        <tr>
+            <th class="data-grid-th">Nome</th>
+            <th class="data-grid-th">SKU</th>
+            <th class="data-grid-th">Preço</th>
+            <th class="data-grid-th">Tamanho</th>
+            <th class="data-grid-th">Quantidade</th>
+            <th class="data-grid-th">Categoria</th>
+            <th class="data-grid-th">Ações</th>
+        </tr>
+        
+        {{#each products}}
+            <tr>
+                <td class="data-grid-td">{{name}}</td>
+                <td class="data-grid-td">{{sku}}</td>
+                <td class="data-grid-td">{{price}}</td>
+                <td class="data-grid-td">{{size}}</td>
+                <td class="data-grid-td">{{amount}}</td>
+                <td class="data-grid-td">{{category}}</td>
+                <td class="data-grid-td">
+                    <a href="/product/editar/{{_id}}">Editar</a> -
+                    <a href="/product/delete/{{_id}}">Deletar</a>
+                </td>
+            </tr>
+        {{/each}}
+
+    </table>
+</div>

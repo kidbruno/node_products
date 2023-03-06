@@ -1,0 +1,59 @@
+<div class="products">
+    <h1 class="title new-item">Editar Produto</h1>
+    <form action="/product/editar" method="POST">
+
+         <input type="hidden" name="id" value="{{product._id}}">
+
+        <div class="input-field">
+            <label class="label" for="name">Nome:</label>
+            <input class="input-text" type="text" name="name" id="name" value="{{product.name}}">
+        </div>
+
+        <div class="input-field">
+            <label class="label" for="sku">Sku</label>
+            <input class="input-text" type="text" name="sku" id="sku" readonly value="{{product.sku}} ">
+        </div>
+
+        <div class="input-field">
+            <label class="label" for="code">Preço</label>
+            <input class="input-text" type="price" name="price" id="price" value="{{product.price}}">
+        </div>
+
+         <div class="input-field">
+            <label class="label" for="">Tamanho</label>
+            <select class="input-select" name="size">
+                <option value="" selected></option>
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+            </select>
+        </div>
+
+        <div class="input-field">
+            <label class="label" for="amount">Quantidade</label>
+            <input class="input-text" type="text" name="amount" id="amount" readonly value="{{product.amount}}">
+        </div>
+
+        <div class="input-field">
+            <label class="label" for="category">Categoria</label>
+           
+            {{!-- caso fosse alterar a categoria --}}
+            {{!-- <select name="category" id="category"> --}}
+                    {{!-- <option value="{{product.category}}" selected>{{product.category}}</option> --}}
+                    {{!-- <option value="" selected></option>
+                    {{#each category}}
+                        <option value="{{name}}">{{name}}</option>
+                    {{/each}}
+            </select> --}}
+
+            <select class="input-select " class="input-field" name="category" id="category">
+                <option readonly value="{{product.category}}" selected>{{product.category}}</option>
+            </select>
+        </div>
+
+        <div class="actions-form">
+            <a href="/product/" class="action back">Voltar</a>
+            <input class="btn-action" type="submit" value="Editar" />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="categories">
+    <h1 class="title new-item">Editar Categoria</h1>
+    <form action="/category/update" method="POST">
+
+        <input type="hidden" name="id" value="{{category._id}}">
+
+        <div class="input-field">
+            <label class="label" for="name">Nome:</label>
+            <input class="input-text" type="text" name="name" id="name" value="{{category.name}}">
+        </div>
+
+        <div class="input-field">
+            <label class="label" for="code">Código</label>
+            <input class="input-text" type="text" name="code" id="code" value="{{category.code}}">
+        </div>
+
+        <div class="actions-form">
+            <a href="/category/" class="action back">Voltar</a>
+            <input class="btn-action"  type="submit" value="Editar" />
+        </div>
+        
+    </form>
+</div>

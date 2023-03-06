@@ -1,0 +1,49 @@
+<div class="products">
+    <h1 class="title new-item">Novo Produto</h1>
+    <form action="/product/adicionar" method="POST">
+
+        <div class="input-field">
+            <label class="label" for="name">Nome:</label>
+            <input class="input-text" type="text" name="name" id="name" placeholder="Digite o nome do Produto:">
+        </div>
+
+        <div class="input-field">
+            <label class="label" for="sku">Sku</label>
+            <input class="input-text" type="text" name="sku" id="sku" placeholder="Digite um SKU:">
+        </div>
+
+        <div class="input-field">
+            <label class="label" for="code">Preço</label>
+            <input class="input-text" type="price" name="price" id="price" placeholder="Digite um Preço:">
+        </div>
+
+         <div class="input-field">
+            <label class="label" for="">Tamanho</label>
+            <select class="input-select"name="size">
+                <option value="P" selected>P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+            </select>
+        </div>
+
+        <div class="input-field">
+            <label class="label" for="amount">Quantidade</label>
+            <input class="input-text" type="text" name="amount" id="amount" placeholder="Digite a quantidade:">
+        </div>
+
+        <div class="input-field">
+            <label class="label" for="category">Categoria</label>
+            <select class="input-select" name="category" id="category">
+                {{#each category}}
+                    {{!-- <option value="{{_id}}">{{name}}</option> --}}
+                    <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="actions-form">
+             <a href="/product/" class="action back">Voltar</a>
+             <input class="btn-action" type="submit" value="Cadastrar" />
+        </div>
+    </form>
+</div>

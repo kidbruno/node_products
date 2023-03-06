@@ -1,0 +1,25 @@
+<div class="categories">
+    
+    <div class="header-list-page">
+        <h1 class="title">Categorias</h1>
+        <a href="/category/adicionar"><button class="btn-action">Adicionar Categoria</button></a>
+    </div>
+
+    <table class="data-grid">
+        <tr>
+            <th class="data-grid-th">Nome</th>
+            <th class="data-grid-th">Código</th>
+            <th class="data-grid-th">Ações</th>
+        </tr>
+        {{#each products}}
+            <tr>
+                <td class="data-grid-td">{{name}}</td>
+                <td class="data-grid-td">{{code}}</td>
+                <td class="data-grid-td">
+                    <a href="/category/editar/{{_id}}">Editar</a> -
+                    <a href="/category/delete/{{_id}}">Deletar</a>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</div>
